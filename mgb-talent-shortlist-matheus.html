@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGB Talent — Candidate Shortlist · Mateus Farias</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --color-primary:#1968AD;--color-primary-dark:#0F4D82;--color-primary-light:#3A82C4;
+  --color-primary-10:rgba(25,104,173,0.10);--color-primary-15:rgba(25,104,173,0.15);
+  --color-navy:#012E4D;--color-navy-dark:#001D31;--color-navy-10:rgba(1,46,77,0.10);
+  --color-gold:#FAC000;--color-gold-dark:#D9A600;--color-gold-light:#FDD040;
+  --color-gold-10:rgba(250,192,0,0.10);--color-gold-15:rgba(250,192,0,0.15);
+  --color-green:#6A9E51;--color-green-dark:#4E7A3A;--color-green-light:#85B86A;
+  --color-green-10:rgba(106,158,81,0.10);--color-green-15:rgba(106,158,81,0.15);
+  --color-white:#FEFEFE;--color-error:#D63C3C;--color-error-10:rgba(214,60,60,0.10);
+  --color-gray-50:#F8FAFB;--color-gray-100:#F4F6F8;--color-gray-200:#E8ECF0;
+  --color-gray-300:#CDD5DF;--color-gray-400:#9AAAB8;--color-gray-500:#6B7F90;
+  --color-gray-600:#445566;--color-gray-700:#2D3D4F;--color-gray-800:#1A2633;
+  --font-display:'Space Grotesk',Arial,sans-serif;--font-body:'Inter',Arial,sans-serif;
+  --shadow-sm:0 2px 8px rgba(1,46,77,0.08);--shadow-md:0 4px 16px rgba(1,46,77,0.12);--shadow-lg:0 8px 32px rgba(1,46,77,0.16);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:9999px;
+  --transition-base:all 0.20s ease;--site-width:1100px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--color-gray-100);color:var(--color-gray-800);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{background:var(--color-navy);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-md);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo{width:36px;height:36px;background:var(--color-gold);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--color-navy);}
+.nav-title{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--color-white);}
+.nav-subtitle{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-badge{background:var(--color-gold);color:var(--color-navy);font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--radius-full);text-transform:uppercase;letter-spacing:0.06em;}
+.nav-date{font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;}
+.nav-back{font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;gap:4px;transition:var(--transition-base);}
+.nav-back:hover{color:var(--color-white);}
+
+/* PAGE */
+.page{max-width:var(--site-width);margin:0 auto;padding:40px 24px 80px;}
+.confidential-banner{background:var(--color-navy-10);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);padding:10px 16px;display:flex;align-items:center;gap:8px;margin-bottom:24px;font-size:12px;color:var(--color-gray-600);font-weight:500;}
+
+/* HERO HEADER */
+.hero-header{background:var(--color-navy);border-radius:var(--radius-2xl);padding:40px 48px;margin-bottom:32px;position:relative;overflow:hidden;}
+.hero-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 50%,rgba(25,104,173,0.18) 0%,transparent 60%);pointer-events:none;}
+.hero-header::after{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(250,192,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.hero-left{}
+.hero-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--color-gold);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--color-gold);display:inline-block;}
+.hero-name{font-family:var(--font-display);font-size:40px;font-weight:800;color:var(--color-white);line-height:1.05;margin-bottom:8px;}
+.hero-title{font-family:var(--font-display);font-size:16px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.4;}
+.hero-type-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.type-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);padding:4px 12px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);}
+.type-pill.blue{background:var(--color-primary-15);border-color:rgba(25,104,173,0.35);color:var(--color-primary-light);}
+.type-pill.gold{background:var(--color-gold-15);border-color:rgba(250,192,0,0.3);color:var(--color-gold-light);}
+.type-pill.green{background:var(--color-green-15);border-color:rgba(106,158,81,0.3);color:#9AC47C;}
+
+/* HERO INFO GRID */
+.hero-right{}
+.hero-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hero-info-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:12px 16px;}
+.hero-info-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:4px;}
+.hero-info-value{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--color-white);line-height:1.3;}
+.hero-info-value a{color:var(--color-gold-light);text-decoration:none;}
+.hero-info-value a:hover{text-decoration:underline;}
+.hero-info-item.full{grid-column:span 2;}
+
+/* SECTION LABEL */
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gray-400);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--color-gray-200);}
+
+/* KEY PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.project-card{background:var(--color-white);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:20px;transition:var(--transition-base);position:relative;overflow:hidden;border-top:3px solid;}
+.project-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.project-card.top{border-top-color:var(--color-gold);}
+.project-card.mid{border-top-color:var(--color-primary);}
+.project-card.base{border-top-color:var(--color-green);}
+.project-rank{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gray-400);margin-bottom:8px;}
+.project-title{font-family:var(--font-display);font-size:16px;font-weight:800;color:var(--color-navy);margin-bottom:4px;line-height:1.2;}
+.project-studio{font-size:12px;font-weight:600;color:var(--color-gray-500);margin-bottom:12px;}
+.project-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
+.project-tag{background:var(--color-gray-100);border:1px solid var(--color-gray-200);border-radius:var(--radius-full);padding:2px 8px;font-size:10px;font-weight:600;color:var(--color-gray-600);text-transform:uppercase;letter-spacing:0.04em;}
+.project-tag.highlight{background:var(--color-gold-10);border-color:rgba(250,192,0,0.3);color:#8A6B00;}
+.project-tag.primary{background:var(--color-primary-10);border-color:rgba(25,104,173,0.2);color:var(--color-primary-dark);}
+.project-tag.green{background:var(--color-green-10);border-color:rgba(106,158,81,0.2);color:var(--color-green-dark);}
+.project-impact{font-size:12px;color:var(--color-gray-700);line-height:1.5;}
+.project-impact strong{color:var(--color-navy);font-weight:700;}
+
+/* CARD */
+.card{background:var(--color-white);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:24px;transition:var(--transition-base);}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.card-title{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--color-navy);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.card-icon{width:28px;height:28px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-blue{background:var(--color-primary-10);}
+.icon-gold{background:var(--color-gold-10);}
+.icon-green{background:var(--color-green-10);}
+.icon-navy{background:var(--color-navy-10);}
+
+/* HORIZONTAL TIMELINE */
+.timeline-h-wrap{overflow-x:auto;padding-bottom:8px;margin-bottom:8px;}
+.timeline-h{display:flex;align-items:flex-start;gap:0;min-width:max-content;padding:8px 0 16px;}
+.tl-item{display:flex;flex-direction:column;align-items:center;position:relative;min-width:180px;max-width:200px;}
+.tl-connector{flex:1;height:2px;background:var(--color-gray-200);align-self:center;min-width:24px;}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;}
+.tl-dot{width:14px;height:14px;border-radius:50%;border:2px solid;background:var(--color-white);z-index:1;flex-shrink:0;}
+.tl-dot.gold{border-color:var(--color-gold);background:var(--color-gold);}
+.tl-dot.primary{border-color:var(--color-primary);}
+.tl-dot.green{border-color:var(--color-green);}
+.tl-dot.navy{border-color:var(--color-navy);background:var(--color-navy);}
+.tl-dot.gray{border-color:var(--color-gray-300);}
+.tl-card{background:var(--color-white);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:14px;width:100%;text-align:left;border-top:3px solid;}
+.tl-card.gold{border-top-color:var(--color-gold);}
+.tl-card.primary{border-top-color:var(--color-primary);}
+.tl-card.green{border-top-color:var(--color-green);}
+.tl-card.navy{border-top-color:var(--color-navy);}
+.tl-card.gray{border-top-color:var(--color-gray-300);}
+.tl-period{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-gray-400);margin-bottom:3px;}
+.tl-company{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--color-navy);margin-bottom:2px;line-height:1.2;}
+.tl-role{font-size:11px;color:var(--color-gray-600);margin-bottom:6px;line-height:1.3;}
+.tl-chips{display:flex;flex-wrap:wrap;gap:3px;}
+.tl-chip{background:var(--color-gray-100);border-radius:var(--radius-sm);padding:1px 6px;font-size:9px;font-weight:600;color:var(--color-gray-600);text-transform:uppercase;letter-spacing:0.04em;}
+.tl-chip.blue{background:var(--color-primary-10);color:var(--color-primary-dark);}
+.tl-chip.green{background:var(--color-green-10);color:var(--color-green-dark);}
+.tl-chip.gold{background:var(--color-gold-10);color:#8A6B00;}
+.tl-duration{font-size:10px;font-weight:700;color:var(--color-primary);margin-top:4px;}
+.tl-line{height:2px;background:var(--color-gray-200);flex:1;align-self:center;min-width:20px;}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:20px;}
+.grid-main{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:20px;}
+
+/* MATCH TABLE */
+.match-table{width:100%;border-collapse:collapse;}
+.match-table thead tr{border-bottom:2px solid var(--color-gray-200);}
+.match-table thead th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-gray-400);padding:0 12px 10px;text-align:left;}
+.match-table thead th:first-child{padding-left:0;}
+.match-table thead th:last-child{text-align:center;}
+.match-table tbody tr{border-bottom:1px solid var(--color-gray-200);transition:var(--transition-base);}
+.match-table tbody tr:last-child{border-bottom:none;}
+.match-table tbody tr:hover{background:var(--color-gray-50);}
+.match-table tbody td{padding:12px;font-size:13px;color:var(--color-gray-700);vertical-align:top;}
+.match-table tbody td:first-child{padding-left:0;font-weight:600;color:var(--color-navy);font-size:12px;}
+.match-table tbody td.req{color:var(--color-gray-600);font-size:12px;}
+.match-table tbody td.cand{font-size:12px;color:var(--color-gray-700);}
+.match-table tbody td.score-cell{text-align:center;}
+.match-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:var(--radius-full);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
+.badge-strong{background:var(--color-green-10);color:var(--color-green-dark);border:1px solid rgba(106,158,81,0.2);}
+.badge-good{background:var(--color-primary-10);color:var(--color-primary-dark);border:1px solid rgba(25,104,173,0.2);}
+.badge-partial{background:var(--color-gold-10);color:#A87F00;border:1px solid rgba(250,192,0,0.3);}
+.badge-gap{background:var(--color-error-10);color:var(--color-error);border:1px solid rgba(214,60,60,0.2);}
+
+/* BEHAVIORAL */
+.profile-trait{display:flex;flex-direction:column;gap:4px;margin-bottom:14px;}
+.profile-trait:last-child{margin-bottom:0;}
+.profile-trait-header{display:flex;justify-content:space-between;align-items:center;}
+.trait-name{font-size:12px;font-weight:600;color:var(--color-gray-700);}
+.trait-score{font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--color-navy);}
+.trait-bar-wrap{height:6px;background:var(--color-gray-200);border-radius:var(--radius-full);overflow:hidden;}
+.trait-bar-fill{height:100%;border-radius:var(--radius-full);}
+.fill-primary{background:var(--color-primary);}
+.fill-green{background:var(--color-green);}
+.fill-gold{background:var(--color-gold);}
+.fill-navy{background:var(--color-navy);}
+
+/* MOTIVATORS */
+.motivator-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.motivator-card{background:var(--color-gray-50);border:1px solid var(--color-gray-200);border-radius:var(--radius-lg);padding:14px;transition:var(--transition-base);}
+.motivator-card:hover{background:var(--color-primary-10);border-color:rgba(25,104,173,0.2);}
+.motivator-icon{font-size:22px;margin-bottom:6px;}
+.motivator-title{font-size:12px;font-weight:700;color:var(--color-navy);margin-bottom:2px;}
+.motivator-desc{font-size:11px;color:var(--color-gray-500);line-height:1.4;}
+
+/* INTERVIEW */
+.interview-grid{display:flex;flex-direction:column;gap:12px;}
+.interview-item{padding:14px 16px;background:var(--color-gray-50);border-radius:var(--radius-lg);border-left:3px solid;transition:var(--transition-base);}
+.interview-item:hover{filter:brightness(0.97);}
+.interview-item.blue{border-left-color:var(--color-primary);background:var(--color-primary-10);}
+.interview-item.blue:hover{background:rgba(25,104,173,0.14);}
+.interview-item.green{border-left-color:var(--color-green);background:var(--color-green-10);}
+.interview-item.green:hover{background:rgba(106,158,81,0.14);}
+.interview-item.navy{border-left-color:var(--color-navy);background:rgba(1,46,77,0.06);}
+.interview-item.navy:hover{background:rgba(1,46,77,0.10);}
+.interview-q{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
+.interview-item.blue .interview-q{color:var(--color-primary-dark);}
+.interview-item.green .interview-q{color:var(--color-green-dark);}
+.interview-item.navy .interview-q{color:var(--color-navy);}
+.interview-a{font-size:13px;color:var(--color-gray-700);line-height:1.5;}
+
+/* SALARY */
+.salary-card{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-navy) 100%);border-radius:var(--radius-xl);padding:24px;color:white;}
+.salary-range{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-gold);margin-bottom:4px;}
+.salary-unit{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:16px;}
+.salary-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.salary-row:last-child{border-bottom:none;}
+.salary-row-label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);}
+.salary-row-value{font-size:13px;font-weight:700;color:var(--color-white);}
+.salary-row-value.green{color:#9AC47C;}
+
+/* RECRUITER */
+.recruiter-card{background:var(--color-navy);border-radius:var(--radius-xl);padding:28px;position:relative;overflow:hidden;margin-bottom:20px;}
+.recruiter-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(25,104,173,0.2) 0%,transparent 70%);pointer-events:none;}
+.recruiter-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gold);margin-bottom:10px;}
+.recruiter-title{font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--color-white);margin-bottom:16px;line-height:1.2;}
+.recruiter-body{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;}
+.recruiter-points{display:flex;flex-direction:column;gap:10px;}
+.recruiter-point{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;background:rgba(255,255,255,0.06);border-left:3px solid var(--color-primary-light);border-radius:0 var(--radius-md) var(--radius-md) 0;}
+.recruiter-point-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.recruiter-point-text{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
+.recruiter-point-text strong{color:var(--color-white);font-weight:600;}
+
+/* CTA */
+.cta-strip{background:var(--color-gold);border-radius:var(--radius-xl);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:32px;flex-wrap:wrap;}
+.cta-heading{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--color-navy);margin-bottom:4px;}
+.cta-sub{font-size:13px;color:var(--color-navy);opacity:0.7;font-weight:500;}
+.cta-actions{display:flex;gap:12px;align-items:center;}
+.btn-primary{background:var(--color-navy);color:var(--color-white);border:none;border-radius:var(--radius-full);padding:12px 24px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition-base);text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.btn-outlined{background:transparent;color:var(--color-navy);border:2px solid var(--color-navy);border-radius:var(--radius-full);padding:11px 24px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition-base);text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.btn-outlined:hover{background:rgba(1,46,77,0.06);transform:translateY(-1px);}
+
+/* FOOTER */
+.footer{margin-top:64px;padding:24px 0;border-top:1px solid var(--color-gray-200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{display:flex;align-items:center;gap:10px;}
+.footer-logo{width:28px;height:28px;background:var(--color-navy);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:11px;color:var(--color-gold);}
+.footer-text{font-size:12px;font-weight:600;color:var(--color-gray-500);}
+.footer-right{font-size:11px;color:var(--color-gray-400);}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr;}
+  .grid-2,.grid-3,.grid-main{grid-template-columns:1fr;}
+  .hero-name{font-size:30px;}
+  .hero-header{padding:28px 24px;}
+}
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">MGB</div>
+    <div><div class="nav-title">MGB Talent</div><div class="nav-subtitle">Candidate Shortlist · Confidential</div></div>
+  </div>
+  <div class="nav-right">
+    <a href="mgb-talent-hub.html" class="nav-back">← Hub</a>
+    <div class="nav-badge">Fateless Games</div>
+    <div class="nav-date">April 2026</div>
+  </div>
+</nav><div class="page"><div class="confidential-banner"><span>🔒</span> This document is confidential and intended exclusively for Fateless Games. Candidate information should not be shared outside the hiring team.</div>
+    <div class="hero-header">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Game Economy Designer · Candidate #02</div>
+          <div class="hero-name">Mateus Farias</div>
+          <div class="hero-title">Senior Technical Game Designer &amp; Systems Specialist · 9+ Years · 4 Shipped Titles</div>
+          <div class="hero-type-pills">
+  <div class="type-pill blue">Apple Arcade</div>
+  <div class="type-pill blue">Netflix</div>
+  <div class="type-pill gold">Live Service</div>
+  <div class="type-pill green">Multi-Platform</div>
+  <div class="type-pill">PC · Console · Mobile</div>
+  <div class="type-pill gold">Psychology Background</div>
+</div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-info-grid">
+  <div class="hero-info-item"><div class="hero-info-label">📍 Location</div><div class="hero-info-value">Canada (BR Origin · Bahia)</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">⏳ Availability</div><div class="hero-info-value">Immediately</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">💼 Experience</div><div class="hero-info-value">9+ Years</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">🎮 Shipped Titles</div><div class="hero-info-value">4 Titles</div></div>
+  <div class="hero-info-item full"><div class="hero-info-label">🔗 LinkedIn</div><div class="hero-info-value"><a href="https://www.linkedin.com/in/mateus-farias-655781b3/" target="_blank">linkedin.com/in/mateus-farias-655781b3 ↗</a></div></div>
+  <div class="hero-info-item"><div class="hero-info-label">🕹️ Game Genres</div><div class="hero-info-value">Action Roguelike · RPG · Strategy</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">📱 Platforms</div><div class="hero-info-value">Mobile · PC · Console</div></div>
+</div>
+        </div>
+      </div>
+    </div>
+  <div class="section-label">🏆 Key Projects — Ranked by Impact</div>
+  <div class="projects-grid">
+    <div class="project-card top">
+      <div class="project-rank">🥇 Most Impactful</div>
+      <div class="project-title">TMNT: Splintered Fate</div>
+      <div class="project-studio">Super Evil Megacorp · Paramount · Apple Arcade</div>
+      <div class="project-tags">
+        <span class="project-tag highlight">1M+ Copies Sold</span>
+        <span class="project-tag green">Best App Award (Kidscreen 2024)</span>
+        <span class="project-tag primary">Best Control Design (NAVGTR)</span>
+      </div>
+      <div class="project-impact">Cooperative action roguelike for Apple Arcade (2023), Nintendo Switch (2024), PC, PlayStation, Xbox (2025). <strong>1 million+ copies sold.</strong> Mateus designed progression, replayability systems, and controlled randomness — zero player complaints on economy balance, a rare signal for a shipped title.</div>
+    </div>
+    <div class="project-card mid">
+      <div class="project-rank">🥈 Strong Signal</div>
+      <div class="project-title">Blood Line: A Rebel Moon Game</div>
+      <div class="project-studio">Super Evil Megacorp · Netflix</div>
+      <div class="project-tags">
+        <span class="project-tag highlight">Best Netflix Game (Regional)</span>
+        <span class="project-tag primary">Live Service</span>
+        <span class="project-tag">Battle Pass Design</span>
+      </div>
+      <div class="project-impact">Owned menus, progression loops, and battle pass design from pre-production through live updates. Awarded <strong>Best Netflix Game</strong> in regional category with strong engagement metrics.</div>
+    </div>
+    <div class="project-card base">
+      <div class="project-rank">🥉 Career Signal</div>
+      <div class="project-title">The Hand of Merlin</div>
+      <div class="project-studio">Room C Games · Zagreb, Croatia · Published by Versus Evil</div>
+      <div class="project-tags">
+        <span class="project-tag green">Lead Designer</span>
+        <span class="project-tag">Multi-Platform Release</span>
+        <span class="project-tag">Turn-Based RPG</span>
+      </div>
+      <div class="project-impact">Promoted to Lead Designer within 3 years. Roguelite RPG shipped on PC (Early Access May 2021, Full Release June 2022), PS4/5, Xbox, Nintendo Switch. Used Steam player data and predictive models to iterate on replayability systems.</div>
+    </div>
+  </div>
+
+  <div class="section-label">📋 Requirement vs. Candidate Match</div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title"><div class="card-icon icon-blue">📊</div>Job Description Requirements — Comparative Analysis</div>
+    <table class="match-table">
+      <thead><tr><th style="width:18%">Requirement</th><th style="width:30%">What Fateless Needs</th><th style="width:34%">Mateus's Background</th><th style="width:18%">Match</th></tr></thead>
+      <tbody>
+        <tr><td>Experience</td><td class="req">3+ years with economy/systems focus</td><td class="cand">9+ years across indie, AA, and globally distributed teams. 3× the minimum requirement.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Exceeds</span></td></tr>
+        <tr><td>Gacha / Hero Collector</td><td class="req">Proven experience on a gacha RPG or hero collector title</td><td class="cand">Has not shipped a pure gacha/hero collector. Strong transferable fundamentals: TMNT (roguelike progression, controlled randomness), Rebel Moon (battle pass + retention loops). Psychology degree directly applicable to gacha behavioral design.</td><td class="score-cell"><span class="match-badge badge-partial">⚠ Transferable</span></td></tr>
+        <tr><td>Economy Design Ownership</td><td class="req">Design currencies, summoning, upgrade loops, faucets &amp; sinks</td><td class="cand">Full ownership of progression loops and economy systems at SEMC (4 years). Rebel Moon: battle pass design, economy tuning from pre-prod through live updates.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Simulation &amp; Modeling</td><td class="req">Forecast resource flow, run what-if scenarios</td><td class="cand">Advanced spreadsheet simulation. Builds predictive models for player progression, resource flow, economy stability. Used player data + predictive models at Room C Games to refine systems.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Data Analysis &amp; KPIs</td><td class="req">Monitor resource inflation and progression via live data</td><td class="cand">Strong product collaboration at SEMC. KPI definition, goals alignment, analytics pipelines. Experience with custom analytics engines.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Google Sheets / Excel</td><td class="req">Advanced — complex formulas, simulations</td><td class="cand">Confirmed advanced. Builds predictive models and simulation frameworks. Primary tool for all economy work.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Confirmed</span></td></tr>
+        <tr><td>Unity</td><td class="req">Unity experience preferred</td><td class="cand">Confirmed. Experience with scripting and analytics pipelines. More technically grounded than most economy designers.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Confirmed</span></td></tr>
+        <tr><td>Analytics Tools</td><td class="req">Firebase, Metaplay, etc. (nice to have)</td><td class="cand">Experience with scripting and analytics pipelines, custom analytics engines. Specific tool names unconfirmed beyond Unity context.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+        <tr><td>Player Psychology</td><td class="req">Strong intuition for gacha player psychology (implicit)</td><td class="cand"><strong>Key differentiator.</strong> Formal Psychology degree applied to behavioral game design. Variable reward schedules, retention loops, player motivation — these are academically grounded, not intuitive.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Rare Edge</span></td></tr>
+        <tr><td>Cross-Discipline Collab</td><td class="req">Work with Game Design, Product, Data Analysts</td><td class="cand">Known for operationalizing abstract goals into practical systems. Strong product and engineering collaboration at SEMC over 4 years.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Live Ops</td><td class="req">Experience with live-operated games (nice to have)</td><td class="cand">Rebel Moon: pre-production through live updates. Economy tuning and feature iteration in a live Netflix game confirmed.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+        <tr><td>Scripting (nice to have)</td><td class="req">C#, Python, or Apps Script</td><td class="cand">Experience with scripting and analytics pipelines. Technically grounded — likely comfortable with light scripting, but direct coding depth unconfirmed.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-label">🗓️ Career Timeline</div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title"><div class="card-icon icon-green">💼</div>Professional &amp; Academic Experience — Chronological</div>
+    <div style="font-size:11px;color:var(--color-gray-400);margin-bottom:12px;display:flex;align-items:center;gap:12px;"><span>💼 Work experience</span><span>🎓 Education</span></div>
+    <div class="timeline-h-wrap">
+      <div class="timeline-h">
+        <div class="tl-item">
+          <div class="tl-card gray">
+            <div class="tl-period">💼 2014 – 2017</div>
+            <div class="tl-company">Early Career · Brazil</div>
+            <div class="tl-role">Narrative Intern → Game Designer</div>
+            <div class="tl-duration">~3 years</div>
+            <div class="tl-chips">
+              <span class="tl-chip">Catnap Games</span>
+              <span class="tl-chip">Interlight Studio</span>
+              <span class="tl-chip">Josh Journey</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card navy">
+            <div class="tl-period">🎓 2017 – 2018</div>
+            <div class="tl-company">Vancouver Film School</div>
+            <div class="tl-role">Post-Secondary Diploma (Hons.) — Game Development</div>
+            <div class="tl-duration">1 year</div>
+            <div class="tl-chips">
+              <span class="tl-chip gold">Best Game · Summer Hat Jam</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card primary">
+            <div class="tl-period">💼 2018 – 2021</div>
+            <div class="tl-company">Room C Games</div>
+            <div class="tl-role">Game Designer → Lead Designer (promoted &lt;3 yrs)</div>
+            <div class="tl-duration">~3 years</div>
+            <div class="tl-chips">
+              <span class="tl-chip blue">The Hand of Merlin</span>
+              <span class="tl-chip">Zagreb, Croatia</span>
+              <span class="tl-chip green">Lead Designer</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card gold">
+            <div class="tl-period">💼 2021 – Jan 2026</div>
+            <div class="tl-company">Super Evil Megacorp</div>
+            <div class="tl-role">Senior Technical Game Designer</div>
+            <div class="tl-duration">4+ years</div>
+            <div class="tl-chips">
+              <span class="tl-chip gold">TMNT: Splintered Fate</span>
+              <span class="tl-chip gold">Rebel Moon (Netflix)</span>
+              <span class="tl-chip blue">Remote · Global Team</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="grid-2" style="margin-bottom:20px;">
+  <div class="card">
+    <div class="card-title"><div class="card-icon icon-navy">🧠</div>Behavioural Profile</div>
+    <div style="margin-bottom:16px;">
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Analytical Rigor</span><span class="trait-score">Very High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-primary" style="width:93%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Cross-Cultural Adaptability</span><span class="trait-score">Very High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-green" style="width:95%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Problem → Solution Drive</span><span class="trait-score">High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-primary" style="width:88%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Interpersonal Awareness</span><span class="trait-score">High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-navy" style="width:85%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Ambiguity Tolerance</span><span class="trait-score">Watch</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-gold" style="width:62%"></div></div></div>
+    </div>
+    <div style="background:var(--color-green-10);border:1px solid rgba(106,158,81,0.2);border-radius:var(--radius-lg);padding:12px 14px;font-size:12px;color:var(--color-green-dark);line-height:1.5;">
+      <strong>✓ Fateless Culture Note:</strong> Mateus brings a high-agency profile, with strong ownership and the ability to make strategic decisions in fast-moving environments. He thrives when given autonomy and clear objectives, acting as a driver of alignment and momentum across teams. His direct and transparent communication style tends to elevate team maturity and decision clarity.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="card-icon icon-gold">⭐</div>What Motivates Mateus</div>
+    <div class="motivator-grid">
+      <div class="motivator-card"><div class="motivator-icon">🎯</div><div class="motivator-title">Mastery & Specialization</div><div class="motivator-desc">Focused on long-term depth in systems & economy design — not a generalist by choice.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">🔗</div><div class="motivator-title">End-to-End Ownership</div><div class="motivator-desc">Concept through validation. Prefers tight pod/squad models over siloed execution.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">🧩</div><div class="motivator-title">Complex Challenges</div><div class="motivator-desc">Drawn to hard systems problems — a from-scratch economy build is attractive, not risky.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">🚀</div><div class="motivator-title">Long-Term Growth Context</div><div class="motivator-desc">Seeks environments where specialization deepens over time. Not looking for a lateral move.</div></div>
+    </div>
+    <div style="margin-top:14px;background:var(--color-gold-10);border:1px solid rgba(250,192,0,0.25);border-radius:var(--radius-lg);padding:12px 14px;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#8A6B00;margin-bottom:4px;">🔑 Alignment Signal</div>
+      <div style="font-size:12px;color:var(--color-gray-700);line-height:1.5;">Fateless's from-scratch economy build gives Mateus exactly the ownership scope and complexity level he's optimized for. The global distributed team mirrors the environment he's thrived in at SEMC and Room C Games across three countries.</div>
+    </div>
+  </div>
+</div><div class="section-label">💬 Interview Recommendations</div><div class="grid-main" style="margin-bottom:20px;"><div class="card"><div class="card-title"><div class="card-icon icon-blue">🎤</div>Suggested Interview Focus Areas</div><div class="interview-grid">
+  <div class="interview-item blue">
+    <div class="interview-q">Technical: Gacha Fundamentals Depth</div>
+    <div class="interview-a">Ask him to design a pity system and summoning pool for a hero collector on the spot. <strong>"Walk us through the rate-up mechanics, floor guarantees, and pool dilution logic you'd propose — and the assumptions behind each decision."</strong> Look for structured thinking, not perfect answers. His psychology background should shape the rationale.</div>
+  </div>
+  <div class="interview-item blue">
+    <div class="interview-q">Technical: Simulation Model Walk-Through</div>
+    <div class="interview-a">Ask him to share a real spreadsheet or simulation model he built. Specifically: how does he stress-test assumptions across F2P, low-spend, and whale segments? What variables does he control for and which does he leave as unknowns? This is where his strength should be very visible.</div>
+  </div>
+  <div class="interview-item green">
+    <div class="interview-q">Behavioural: Psychology into Design Practice</div>
+    <div class="interview-a"><strong>"How does your Psychology background change the way you design reward loops versus someone without that training?"</strong> Look for specific behavioral concepts: variable ratio schedules, near-miss effects, social validation, loss aversion. If he speaks this language fluently and connects it to concrete design decisions, the gacha gap shrinks significantly.</div>
+  </div>
+  <div class="interview-item navy">
+    <div class="interview-q">Cultural: Self-Advocacy &amp; Decision Ownership</div>
+    <div class="interview-a"><strong>"Tell me about a disagreement you had with a PM or founder about an economy decision — and how you handled it."</strong> Confirm he can advocate for design decisions without creating friction. Fateless needs someone who pushes back clearly and professionally, not just goes along.</div>
+  </div>
+</div></div><div style="display:flex;flex-direction:column;gap:20px;">
+  <div class="salary-card">
+    <div class="card-title" style="color:rgba(255,255,255,0.7);margin-bottom:12px;"><div style="width:28px;height:28px;border-radius:8px;background:rgba(250,192,0,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;">💰</div>Compensation Overview</div>
+    <div class="salary-range">$70,000 – $100,000</div>
+    <div class="salary-unit">USD · Annual · Remote</div>
+    <div class="salary-row"><div class="salary-row-label">Monthly Equivalent</div><div class="salary-row-value">~$5,833 – $8,333/mo</div></div>
+    <div class="salary-row"><div class="salary-row-label">Discussion Style</div><div class="salary-row-value green">Candidate-first</div></div>
+    <div class="salary-row"><div class="salary-row-label">MGB Fee (5% Annual)</div><div class="salary-row-value">$3,500 – $5,000</div></div>
+    <div style="margin-top:14px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.6);line-height:1.5;">Recommendation: open the conversation around the $70–80k floor and move up based on scope agreement. Candidate-first salary discussions are standard at Fateless.</div>
+  </div>
+</div></div>
+  <div class="recruiter-card">
+    <div class="recruiter-label">🧠 MGB Recruiter Assessment</div>
+    <div class="recruiter-title">Why We're Recommending Mateus</div>
+    <div class="recruiter-body">Mateus brings a rare combination that goes beyond standard economy design credentials: <strong>4 shipped titles, 4+ years of continuous delivery at a globally distributed studio, and a formal Psychology degree applied directly to behavioral game design.</strong> In a field where gacha and retention design are often learned through trial and error, someone who studied the underlying behavioral science academically and applies it professionally is structurally differentiated.</div>
+    <div class="recruiter-points">
+      <div class="recruiter-point"><div class="recruiter-point-icon">🎯</div><div class="recruiter-point-text"><strong>Shipped title credibility with commercial validation:</strong> 1M+ copies sold on TMNT with zero player economy complaints, and Best Netflix Game for Rebel Moon — these are documented, verifiable outcomes that demonstrate his ability to design systems that players accept and engage with over time.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">🧠</div><div class="recruiter-point-text"><strong>Psychology-grounded behavioral design:</strong> The skills that make gacha economies work — variable reward schedules, pity mechanics, sunk cost dynamics — are rooted in behavioral psychology. Mateus brings this as a trained framework, not pattern matching from previous titles. For a hero collector RPG, this is a direct structural advantage.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">🌐</div><div class="recruiter-point-text"><strong>Remote-first, globally distributed team experience:</strong> SEMC has operated as a fully remote global studio since before the pandemic. Mateus has navigated this environment for 4+ years — Brazil to Croatia to Canada to the global SEMC team. Fateless's remote setup is already familiar terrain for him.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">📈</div><div class="recruiter-point-text"><strong>For any area requiring specific gacha title depth, a structured 30-day onboarding plan focused on genre benchmarks will accelerate his ramp:</strong> studying Raid, Summoners War, and comparable titles through both player experience and data analysis is a well-defined process Mateus is built to execute quickly given his simulation skills and learning velocity.</div></div>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <div>
+      <div class="cta-heading">Ready to move forward with Mateus?</div>
+      <div class="cta-sub">We'll brief him on Fateless's context and ensure full alignment before any intro call.</div>
+    </div>
+    <div class="cta-actions">
+      <a href="mgb-talent-shortlist.html" class="btn-outlined">← View Leonardo</a>
+      <a href="mailto:antonio@mentoriasgamesbrasil.com.br" class="btn-primary">Request Intro Call →</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand"><div class="footer-logo">MGB</div><div class="footer-text">Mentorias Games Brasil · Talent Division · April 2026</div></div>
+    <div class="footer-right">Confidential · For Fateless Games Only · 5% placement fee on annual salary</div>
+  </div>
+</div></body></html>
