@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MGB Talent — Candidate Shortlist · Igor Ferreira</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --color-primary:#1968AD;--color-primary-dark:#0F4D82;--color-primary-light:#3A82C4;
+  --color-primary-10:rgba(25,104,173,0.10);--color-primary-15:rgba(25,104,173,0.15);
+  --color-navy:#012E4D;--color-navy-dark:#001D31;--color-navy-10:rgba(1,46,77,0.10);
+  --color-gold:#FAC000;--color-gold-dark:#D9A600;--color-gold-light:#FDD040;
+  --color-gold-10:rgba(250,192,0,0.10);--color-gold-15:rgba(250,192,0,0.15);
+  --color-green:#6A9E51;--color-green-dark:#4E7A3A;--color-green-light:#85B86A;
+  --color-green-10:rgba(106,158,81,0.10);--color-green-15:rgba(106,158,81,0.15);
+  --color-white:#FEFEFE;--color-error:#D63C3C;--color-error-10:rgba(214,60,60,0.10);
+  --color-gray-50:#F8FAFB;--color-gray-100:#F4F6F8;--color-gray-200:#E8ECF0;
+  --color-gray-300:#CDD5DF;--color-gray-400:#9AAAB8;--color-gray-500:#6B7F90;
+  --color-gray-600:#445566;--color-gray-700:#2D3D4F;--color-gray-800:#1A2633;
+  --font-display:'Space Grotesk',Arial,sans-serif;--font-body:'Inter',Arial,sans-serif;
+  --shadow-sm:0 2px 8px rgba(1,46,77,0.08);--shadow-md:0 4px 16px rgba(1,46,77,0.12);--shadow-lg:0 8px 32px rgba(1,46,77,0.16);
+  --radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:9999px;
+  --transition-base:all 0.20s ease;--site-width:1100px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--color-gray-100);color:var(--color-gray-800);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{background:var(--color-navy);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-md);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo{width:36px;height:36px;background:var(--color-gold);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--color-navy);}
+.nav-title{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--color-white);}
+.nav-subtitle{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-badge{background:var(--color-gold);color:var(--color-navy);font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--radius-full);text-transform:uppercase;letter-spacing:0.06em;}
+.nav-date{font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;}
+.nav-back{font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);text-decoration:none;display:flex;align-items:center;gap:4px;transition:var(--transition-base);}
+.nav-back:hover{color:var(--color-white);}
+
+/* PAGE */
+.page{max-width:var(--site-width);margin:0 auto;padding:40px 24px 80px;}
+.confidential-banner{background:var(--color-navy-10);border:1px solid var(--color-gray-200);border-radius:var(--radius-md);padding:10px 16px;display:flex;align-items:center;gap:8px;margin-bottom:24px;font-size:12px;color:var(--color-gray-600);font-weight:500;}
+
+/* HERO HEADER */
+.hero-header{background:var(--color-navy);border-radius:var(--radius-2xl);padding:40px 48px;margin-bottom:32px;position:relative;overflow:hidden;}
+.hero-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 50%,rgba(25,104,173,0.18) 0%,transparent 60%);pointer-events:none;}
+.hero-header::after{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(250,192,0,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.hero-left{}
+.hero-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--color-gold);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--color-gold);display:inline-block;}
+.hero-name{font-family:var(--font-display);font-size:40px;font-weight:800;color:var(--color-white);line-height:1.05;margin-bottom:8px;}
+.hero-title{font-family:var(--font-display);font-size:16px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.4;}
+.hero-type-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.type-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-full);padding:4px 12px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);}
+.type-pill.blue{background:var(--color-primary-15);border-color:rgba(25,104,173,0.35);color:var(--color-primary-light);}
+.type-pill.gold{background:var(--color-gold-15);border-color:rgba(250,192,0,0.3);color:var(--color-gold-light);}
+.type-pill.green{background:var(--color-green-15);border-color:rgba(106,158,81,0.3);color:#9AC47C;}
+
+/* HERO INFO GRID */
+.hero-right{}
+.hero-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hero-info-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:12px 16px;}
+.hero-info-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-bottom:4px;}
+.hero-info-value{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--color-white);line-height:1.3;}
+.hero-info-value a{color:var(--color-gold-light);text-decoration:none;}
+.hero-info-value a:hover{text-decoration:underline;}
+.hero-info-item.full{grid-column:span 2;}
+
+/* SECTION LABEL */
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gray-400);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--color-gray-200);}
+
+/* KEY PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+.project-card{background:var(--color-white);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:20px;transition:var(--transition-base);position:relative;overflow:hidden;border-top:3px solid;}
+.project-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.project-card.top{border-top-color:var(--color-gold);}
+.project-card.mid{border-top-color:var(--color-primary);}
+.project-card.base{border-top-color:var(--color-green);}
+.project-rank{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gray-400);margin-bottom:8px;}
+.project-title{font-family:var(--font-display);font-size:16px;font-weight:800;color:var(--color-navy);margin-bottom:4px;line-height:1.2;}
+.project-studio{font-size:12px;font-weight:600;color:var(--color-gray-500);margin-bottom:12px;}
+.project-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
+.project-tag{background:var(--color-gray-100);border:1px solid var(--color-gray-200);border-radius:var(--radius-full);padding:2px 8px;font-size:10px;font-weight:600;color:var(--color-gray-600);text-transform:uppercase;letter-spacing:0.04em;}
+.project-tag.highlight{background:var(--color-gold-10);border-color:rgba(250,192,0,0.3);color:#8A6B00;}
+.project-tag.primary{background:var(--color-primary-10);border-color:rgba(25,104,173,0.2);color:var(--color-primary-dark);}
+.project-tag.green{background:var(--color-green-10);border-color:rgba(106,158,81,0.2);color:var(--color-green-dark);}
+.project-impact{font-size:12px;color:var(--color-gray-700);line-height:1.5;}
+.project-impact strong{color:var(--color-navy);font-weight:700;}
+
+/* CARD */
+.card{background:var(--color-white);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:24px;transition:var(--transition-base);}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.card-title{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--color-navy);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.card-icon{width:28px;height:28px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-blue{background:var(--color-primary-10);}
+.icon-gold{background:var(--color-gold-10);}
+.icon-green{background:var(--color-green-10);}
+.icon-navy{background:var(--color-navy-10);}
+
+/* HORIZONTAL TIMELINE */
+.timeline-h-wrap{overflow-x:auto;padding-bottom:8px;margin-bottom:8px;}
+.timeline-h{display:flex;align-items:flex-start;gap:0;min-width:max-content;padding:8px 0 16px;}
+.tl-item{display:flex;flex-direction:column;align-items:center;position:relative;min-width:180px;max-width:200px;}
+.tl-connector{flex:1;height:2px;background:var(--color-gray-200);align-self:center;min-width:24px;}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;}
+.tl-dot{width:14px;height:14px;border-radius:50%;border:2px solid;background:var(--color-white);z-index:1;flex-shrink:0;}
+.tl-dot.gold{border-color:var(--color-gold);background:var(--color-gold);}
+.tl-dot.primary{border-color:var(--color-primary);}
+.tl-dot.green{border-color:var(--color-green);}
+.tl-dot.navy{border-color:var(--color-navy);background:var(--color-navy);}
+.tl-dot.gray{border-color:var(--color-gray-300);}
+.tl-card{background:var(--color-white);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:14px;width:100%;text-align:left;border-top:3px solid;}
+.tl-card.gold{border-top-color:var(--color-gold);}
+.tl-card.primary{border-top-color:var(--color-primary);}
+.tl-card.green{border-top-color:var(--color-green);}
+.tl-card.navy{border-top-color:var(--color-navy);}
+.tl-card.gray{border-top-color:var(--color-gray-300);}
+.tl-period{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-gray-400);margin-bottom:3px;}
+.tl-company{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--color-navy);margin-bottom:2px;line-height:1.2;}
+.tl-role{font-size:11px;color:var(--color-gray-600);margin-bottom:6px;line-height:1.3;}
+.tl-chips{display:flex;flex-wrap:wrap;gap:3px;}
+.tl-chip{background:var(--color-gray-100);border-radius:var(--radius-sm);padding:1px 6px;font-size:9px;font-weight:600;color:var(--color-gray-600);text-transform:uppercase;letter-spacing:0.04em;}
+.tl-chip.blue{background:var(--color-primary-10);color:var(--color-primary-dark);}
+.tl-chip.green{background:var(--color-green-10);color:var(--color-green-dark);}
+.tl-chip.gold{background:var(--color-gold-10);color:#8A6B00;}
+.tl-duration{font-size:10px;font-weight:700;color:var(--color-primary);margin-top:4px;}
+.tl-line{height:2px;background:var(--color-gray-200);flex:1;align-self:center;min-width:20px;}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:20px;}
+.grid-main{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:20px;}
+
+/* MATCH TABLE */
+.match-table{width:100%;border-collapse:collapse;}
+.match-table thead tr{border-bottom:2px solid var(--color-gray-200);}
+.match-table thead th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-gray-400);padding:0 12px 10px;text-align:left;}
+.match-table thead th:first-child{padding-left:0;}
+.match-table thead th:last-child{text-align:center;}
+.match-table tbody tr{border-bottom:1px solid var(--color-gray-200);transition:var(--transition-base);}
+.match-table tbody tr:last-child{border-bottom:none;}
+.match-table tbody tr:hover{background:var(--color-gray-50);}
+.match-table tbody td{padding:12px;font-size:13px;color:var(--color-gray-700);vertical-align:top;}
+.match-table tbody td:first-child{padding-left:0;font-weight:600;color:var(--color-navy);font-size:12px;}
+.match-table tbody td.req{color:var(--color-gray-600);font-size:12px;}
+.match-table tbody td.cand{font-size:12px;color:var(--color-gray-700);}
+.match-table tbody td.score-cell{text-align:center;}
+.match-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:var(--radius-full);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
+.badge-strong{background:var(--color-green-10);color:var(--color-green-dark);border:1px solid rgba(106,158,81,0.2);}
+.badge-good{background:var(--color-primary-10);color:var(--color-primary-dark);border:1px solid rgba(25,104,173,0.2);}
+.badge-partial{background:var(--color-gold-10);color:#A87F00;border:1px solid rgba(250,192,0,0.3);}
+.badge-gap{background:var(--color-error-10);color:var(--color-error);border:1px solid rgba(214,60,60,0.2);}
+
+/* BEHAVIORAL */
+.profile-trait{display:flex;flex-direction:column;gap:4px;margin-bottom:14px;}
+.profile-trait:last-child{margin-bottom:0;}
+.profile-trait-header{display:flex;justify-content:space-between;align-items:center;}
+.trait-name{font-size:12px;font-weight:600;color:var(--color-gray-700);}
+.trait-score{font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--color-navy);}
+.trait-bar-wrap{height:6px;background:var(--color-gray-200);border-radius:var(--radius-full);overflow:hidden;}
+.trait-bar-fill{height:100%;border-radius:var(--radius-full);}
+.fill-primary{background:var(--color-primary);}
+.fill-green{background:var(--color-green);}
+.fill-gold{background:var(--color-gold);}
+.fill-navy{background:var(--color-navy);}
+
+/* MOTIVATORS */
+.motivator-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.motivator-card{background:var(--color-gray-50);border:1px solid var(--color-gray-200);border-radius:var(--radius-lg);padding:14px;transition:var(--transition-base);}
+.motivator-card:hover{background:var(--color-primary-10);border-color:rgba(25,104,173,0.2);}
+.motivator-icon{font-size:22px;margin-bottom:6px;}
+.motivator-title{font-size:12px;font-weight:700;color:var(--color-navy);margin-bottom:2px;}
+.motivator-desc{font-size:11px;color:var(--color-gray-500);line-height:1.4;}
+
+/* INTERVIEW */
+.interview-grid{display:flex;flex-direction:column;gap:12px;}
+.interview-item{padding:14px 16px;background:var(--color-gray-50);border-radius:var(--radius-lg);border-left:3px solid;transition:var(--transition-base);}
+.interview-item:hover{filter:brightness(0.97);}
+.interview-item.blue{border-left-color:var(--color-primary);background:var(--color-primary-10);}
+.interview-item.blue:hover{background:rgba(25,104,173,0.14);}
+.interview-item.green{border-left-color:var(--color-green);background:var(--color-green-10);}
+.interview-item.green:hover{background:rgba(106,158,81,0.14);}
+.interview-item.navy{border-left-color:var(--color-navy);background:rgba(1,46,77,0.06);}
+.interview-item.navy:hover{background:rgba(1,46,77,0.10);}
+.interview-q{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
+.interview-item.blue .interview-q{color:var(--color-primary-dark);}
+.interview-item.green .interview-q{color:var(--color-green-dark);}
+.interview-item.navy .interview-q{color:var(--color-navy);}
+.interview-a{font-size:13px;color:var(--color-gray-700);line-height:1.5;}
+
+/* SALARY */
+.salary-card{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-navy) 100%);border-radius:var(--radius-xl);padding:24px;color:white;}
+.salary-range{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-gold);margin-bottom:4px;}
+.salary-unit{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:16px;}
+.salary-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.salary-row:last-child{border-bottom:none;}
+.salary-row-label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);}
+.salary-row-value{font-size:13px;font-weight:700;color:var(--color-white);}
+.salary-row-value.green{color:#9AC47C;}
+
+/* RECRUITER */
+.recruiter-card{background:var(--color-navy);border-radius:var(--radius-xl);padding:28px;position:relative;overflow:hidden;margin-bottom:20px;}
+.recruiter-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(25,104,173,0.2) 0%,transparent 70%);pointer-events:none;}
+.recruiter-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-gold);margin-bottom:10px;}
+.recruiter-title{font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--color-white);margin-bottom:16px;line-height:1.2;}
+.recruiter-body{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;}
+.recruiter-points{display:flex;flex-direction:column;gap:10px;}
+.recruiter-point{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;background:rgba(255,255,255,0.06);border-left:3px solid var(--color-primary-light);border-radius:0 var(--radius-md) var(--radius-md) 0;}
+.recruiter-point-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.recruiter-point-text{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
+.recruiter-point-text strong{color:var(--color-white);font-weight:600;}
+
+/* CTA */
+.cta-strip{background:var(--color-gold);border-radius:var(--radius-xl);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:32px;flex-wrap:wrap;}
+.cta-heading{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--color-navy);margin-bottom:4px;}
+.cta-sub{font-size:13px;color:var(--color-navy);opacity:0.7;font-weight:500;}
+.cta-actions{display:flex;gap:12px;align-items:center;}
+.btn-primary{background:var(--color-navy);color:var(--color-white);border:none;border-radius:var(--radius-full);padding:12px 24px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition-base);text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.btn-outlined{background:transparent;color:var(--color-navy);border:2px solid var(--color-navy);border-radius:var(--radius-full);padding:11px 24px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition-base);text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.btn-outlined:hover{background:rgba(1,46,77,0.06);transform:translateY(-1px);}
+
+/* FOOTER */
+.footer{margin-top:64px;padding:24px 0;border-top:1px solid var(--color-gray-200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{display:flex;align-items:center;gap:10px;}
+.footer-logo{width:28px;height:28px;background:var(--color-navy);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:11px;color:var(--color-gold);}
+.footer-text{font-size:12px;font-weight:600;color:var(--color-gray-500);}
+.footer-right{font-size:11px;color:var(--color-gray-400);}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr;}
+  .grid-2,.grid-3,.grid-main{grid-template-columns:1fr;}
+  .hero-name{font-size:30px;}
+  .hero-header{padding:28px 24px;}
+}
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">MGB</div>
+    <div><div class="nav-title">MGB Talent</div><div class="nav-subtitle">Candidate Shortlist · Confidential</div></div>
+  </div>
+  <div class="nav-right">
+    <a href="mgb-talent-hub.html" class="nav-back">← Hub</a>
+    <div class="nav-badge">Fateless Games</div>
+    <div class="nav-date">April 2026</div>
+  </div>
+</nav><div class="page"><div class="confidential-banner"><span>🔒</span> This document is confidential and intended exclusively for Fateless Games. Candidate information should not be shared outside the hiring team.</div>
+    <div class="hero-header">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Game Producer · Candidate #01</div>
+          <div class="hero-name">Igor Ferreira</div>
+          <div class="hero-title">Game Producer · ~3 Years · QA, Production &amp; Live Ops</div>
+          <div class="hero-type-pills">
+  <div class="type-pill blue">Cross-Functional</div>
+  <div class="type-pill blue">Remote &amp; Distributed</div>
+  <div class="type-pill gold">Live Ops</div>
+  <div class="type-pill green">AAA QA Background</div>
+  <div class="type-pill">Jira · ClickUp · Notion · Perforce · UE5</div>
+</div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-info-grid">
+  <div class="hero-info-item"><div class="hero-info-label">📍 Location</div><div class="hero-info-value">Porto Alegre, RS — Brazil</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">⏳ Availability</div><div class="hero-info-value">Immediately</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">💼 Experience</div><div class="hero-info-value">~3 Years Production</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">🎮 Developed Titles</div><div class="hero-info-value">3 Projects</div></div>
+  <div class="hero-info-item full"><div class="hero-info-label">🔗 LinkedIn</div><div class="hero-info-value"><a href="https://www.linkedin.com/in/igorhaferreira/" target="_blank">linkedin.com/in/igorhaferreira ↗</a></div></div>
+  <div class="hero-info-item"><div class="hero-info-label">🕹️ Game Genres</div><div class="hero-info-value">Tower Defense · MMO FPS · Card Battler</div></div>
+  <div class="hero-info-item"><div class="hero-info-label">📱 Platforms</div><div class="hero-info-value">PC · Console · Live Ops (EGS)</div></div>
+</div>
+        </div>
+      </div>
+    </div>
+  <div class="section-label">🏗️ Key Projects — Ranked by Scale &amp; Impact</div>
+  <div class="projects-grid">
+    <div class="project-card top">
+      <div class="project-rank">🥇 Full Production Ownership</div>
+      <div class="project-title">Wardens Rising</div>
+      <div class="project-studio">Big Moxi Games · Porto Alegre, Brazil · Tower Defense / Shooter · PC &amp; Console</div>
+      <div class="project-tags">
+        <span class="project-tag highlight">40+ Team</span>
+        <span class="project-tag primary">Sole Producer</span>
+        <span class="project-tag green">QA Dept Built from Scratch</span>
+        <span class="project-tag">Oct 2023 – Jan 2025</span>
+      </div>
+      <div class="project-impact">Full end-to-end production ownership of a tower defense/shooter original IP. Owned delivery timelines, feature completion, and cross-discipline coordination across 40+ people. <strong>Built Big Moxi's QA department from scratch</strong> — designed cross-department processes and documentation for a team that grew to 5 people. Managed the core gameplay refactor that enhanced strategic depth.</div>
+    </div>
+    <div class="project-card mid">
+      <div class="project-rank">🥈 Largest Team &amp; Open World Scale</div>
+      <div class="project-title">Reaper Actual</div>
+      <div class="project-studio">Big Moxi Games · MMO FPS · Unreal Engine 5 · Open World</div>
+      <div class="project-tags">
+        <span class="project-tag primary">Art Producer</span>
+        <span class="project-tag">30+ Art Team</span>
+        <span class="project-tag">UE5 + Houdini</span>
+        <span class="project-tag">Feb 2025 – Aug 2025</span>
+      </div>
+      <div class="project-impact">Led art development across multiple disciplines simultaneously (Environment, Character, Animation, Tech Art — 30+ team members). Oversaw integration of art pipelines for <strong>procedurally assisted open-world creation using UE5, Houdini, and proprietary tools</strong>. Built long-term workload tracking for art teams across future milestones.</div>
+    </div>
+    <div class="project-card base">
+      <div class="project-rank">🥉 Live Ops Signal</div>
+      <div class="project-title">Overknights</div>
+      <div class="project-studio">Obitus Games · PvP Card Battler · Live Service on EGS</div>
+      <div class="project-tags">
+        <span class="project-tag gold">Live Ops (EGS)</span>
+        <span class="project-tag primary">20+ Team</span>
+        <span class="project-tag">Milestone + Sprint Planning</span>
+        <span class="project-tag">Aug – Dec 2025</span>
+      </div>
+      <div class="project-impact">Produced feature and content squads for LiveOps on Epic Games Store, delivering periodic updates on time and at expected quality. <strong>Structured and rolled out project-wide processes</strong> (20+ people): clear review ownership, streamlined build release flow, single source-of-truth documentation. Partnered across all departments for ~2-month Milestone and 2-week Sprint planning.</div>
+    </div>
+  </div>
+
+  <div class="section-label">📋 Requirement vs. Candidate Match</div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title"><div class="card-icon icon-blue">📊</div>Job Description Requirements — Comparative Analysis</div>
+    <div style="background:var(--color-primary-10);border:1px solid rgba(25,104,173,0.18);border-radius:var(--radius-lg);padding:12px 16px;margin-bottom:18px;font-size:12px;color:var(--color-primary-dark);line-height:1.5;">
+      <strong>📌 Reading this table:</strong> Igor's profile is evaluated against the core requirements of a mid-level Game Producer in a globally distributed RPG studio. His 3-year timeline spans 4 production roles with increasing scope — breadth across environments compensates for time in seat.
+    </div>
+    <table class="match-table">
+      <thead><tr><th style="width:18%">Requirement</th><th style="width:30%">What Fateless Needs</th><th style="width:34%">Igor's Background</th><th style="width:18%">Match</th></tr></thead>
+      <tbody>
+        <tr><td>Years of Experience</td><td class="req">3–5+ years in game production</td><td class="cand">~3 years spanning QA → Full Production (Wardens Rising) → Art Production (Reaper Actual) → Live Ops (Overknights). Meets the minimum. 4 distinct production contexts in under 3 years accelerates the learning curve significantly.</td><td class="score-cell"><span class="match-badge badge-good">~ Meets Min.</span></td></tr>
+        <tr><td>Cross-Functional Coordination</td><td class="req">Align design, engineering, art, and QA across disciplines</td><td class="cand">Directly owned cross-discipline coordination at Wardens Rising (40+ people: design, art, engineering, QA). At Reaper Actual, coordinated Environment, Character, Animation, and Tech Art across 30+ artists. Set up cross-department QA processes from scratch.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Remote &amp; Distributed Teams</td><td class="req">Comfortable managing delivery across time zones</td><td class="cand">Big Moxi Games has offices in the US and Brazil with distributed global talent. Experience operating within this distributed model confirmed across both Big Moxi roles.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+        <tr><td>Agile / Scrum</td><td class="req">Sprint planning, standups, retrospectives, backlog management</td><td class="cand">Managed Milestone (~2 months) and Sprint (2 weeks) planning at Obitus Games. Agile project management (Scrum/Kanban) listed in CV knowledge. Applied across all three production roles.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Confirmed</span></td></tr>
+        <tr><td>Milestone &amp; Roadmap Planning</td><td class="req">Own and maintain production roadmaps</td><td class="cand">Sole owner of delivery timelines and roadmaps at Wardens Rising (40+ team). At Obitus, partnered with all departments to estimate and balance scope across milestone and sprint cycles.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Live Ops Experience</td><td class="req">Production experience in live service with patch cadence</td><td class="cand">Produced feature and content squads for LiveOps on EGS at Obitus Games — periodic updates delivered on time and at expected quality. Most recent role; directly relevant.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Confirmed</span></td></tr>
+        <tr><td>Process Documentation</td><td class="req">Structure and communicate production processes</td><td class="cand">At Obitus: structured and rolled out project-wide processes for 20+ people resulting in clear review ownership, streamlined build release flow, and a single source-of-truth documentation database. Strong signal.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Strong</span></td></tr>
+        <tr><td>Shipped Title at Scale</td><td class="req">Experience seeing a product through a successful public launch</td><td class="cand">Wardens Rising did not reach public launch. Overknights ran as Live Ops on EGS — closest to a live product experience. No fully shipped commercial title in the portfolio yet.</td><td class="score-cell"><span class="match-badge badge-gap">✗ Gap</span></td></tr>
+        <tr><td>KPI-Driven Production</td><td class="req">Define and track production KPIs; data-driven prioritization</td><td class="cand">Demonstrated ability to connect production work with business outcomes — at Obitus: deliverables tied to EGS live service quality metrics. Scope estimation and milestone management show structured prioritization discipline. Has basic Python and C# knowledge for data scripting support.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+        <tr><td>Monetization / Player Engagement Production</td><td class="req">Production support for gacha, battle pass, retention loops</td><td class="cand">Coordinated loot-adjacent feature delivery through live ops cycles at Obitus. No direct production ownership of monetization-first systems — widest remaining gap for Fateless's RPG context.</td><td class="score-cell"><span class="match-badge badge-partial">⚠ Limited</span></td></tr>
+        <tr><td>Tools Proficiency</td><td class="req">Jira, version control, project tracking</td><td class="cand">Jira, ClickUp, Notion confirmed. Perforce confirmed. Unity and Unreal Engine 5 confirmed. MS Office / Google Suite. Complete tooling stack — one of his strongest areas.</td><td class="score-cell"><span class="match-badge badge-strong">✓ Confirmed</span></td></tr>
+        <tr><td>Cultural Fit (Fateless)</td><td class="req">Accountable, self-directed, collaborative</td><td class="cand">People-first (empathetic, teamwork-driven per CV). Strong communicator. Fluent English confirmed. Brazilian Portuguese native. At Obitus, created a single source-of-truth documentation database — self-directed process leadership instinct.</td><td class="score-cell"><span class="match-badge badge-good">~ Good</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-label">🗓️ Career Timeline</div>
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title"><div class="card-icon icon-green">💼</div>Professional &amp; Academic Experience — Chronological</div>
+    <div style="font-size:11px;color:var(--color-gray-400);margin-bottom:12px;display:flex;align-items:center;gap:12px;"><span>💼 Work experience</span><span>🎓 Education</span></div>
+    <div class="timeline-h-wrap">
+      <div class="timeline-h">
+        <div class="tl-item">
+          <div class="tl-card navy">
+            <div class="tl-period">🎓 Mar 2019 – Dec 2024</div>
+            <div class="tl-company">UFRGS — Porto Alegre</div>
+            <div class="tl-role">BSc in Public Relations (FABICO)</div>
+            <div class="tl-duration">5.5 years</div>
+            <div class="tl-chips"><span class="tl-chip">Porto Alegre, BR</span></div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card navy">
+            <div class="tl-period">🎓 Sep 2022 – Jun 2023</div>
+            <div class="tl-company">Budapest Business School</div>
+            <div class="tl-role">BSc Exchange · Communication &amp; Media (FIMB)</div>
+            <div class="tl-duration">9 months</div>
+            <div class="tl-chips"><span class="tl-chip gold">Stipendium Hungaricum</span><span class="tl-chip">Budapest, HU</span></div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card gray">
+            <div class="tl-period">💼 Jan – Jun 2023</div>
+            <div class="tl-company">Build a Rocket Boy</div>
+            <div class="tl-role">Associate Technical QA Analyst — Everywhere / Mind's Eye (AAA)</div>
+            <div class="tl-duration">6 months</div>
+            <div class="tl-chips"><span class="tl-chip">UE5</span><span class="tl-chip">AAA QA</span></div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card primary">
+            <div class="tl-period">💼 Oct 2023 – Jan 2025</div>
+            <div class="tl-company">Big Moxi Games</div>
+            <div class="tl-role">Game Producer — Wardens Rising (Tower Defense/Shooter)</div>
+            <div class="tl-duration">1 yr 3 mo</div>
+            <div class="tl-chips">
+              <span class="tl-chip gold">40+ Team</span>
+              <span class="tl-chip blue">Full Ownership</span>
+              <span class="tl-chip green">QA Dept Built</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card primary">
+            <div class="tl-period">💼 Feb – Aug 2025</div>
+            <div class="tl-company">Big Moxi Games</div>
+            <div class="tl-role">Art Producer — Reaper Actual (MMO FPS)</div>
+            <div class="tl-duration">7 months</div>
+            <div class="tl-chips">
+              <span class="tl-chip blue">30+ Artists</span>
+              <span class="tl-chip">UE5 + Houdini</span>
+              <span class="tl-chip">Open World</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-card gold">
+            <div class="tl-period">💼 Aug – Dec 2025</div>
+            <div class="tl-company">Obitus Games</div>
+            <div class="tl-role">Game Producer — Overknights (PvP Card Battler)</div>
+            <div class="tl-duration">5 months</div>
+            <div class="tl-chips">
+              <span class="tl-chip gold">Live Ops (EGS)</span>
+              <span class="tl-chip blue">Process Rollout</span>
+              <span class="tl-chip">20+ Team</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="grid-2" style="margin-bottom:20px;">
+  <div class="card">
+    <div class="card-title"><div class="card-icon icon-navy">🧠</div>Behavioural Profile</div>
+    <div style="margin-bottom:16px;">
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Conflict Resolution &amp; Alignment</span><span class="trait-score">Very High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-green" style="width:93%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Adaptability</span><span class="trait-score">Very High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-green" style="width:92%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Emotional Intelligence</span><span class="trait-score">High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-primary" style="width:88%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Process-Building Instinct</span><span class="trait-score">High</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-primary" style="width:84%"></div></div></div>
+      <div class="profile-trait"><div class="profile-trait-header"><span class="trait-name">Prioritization Under Pressure</span><span class="trait-score">Watch</span></div><div class="trait-bar-wrap"><div class="trait-bar-fill fill-gold" style="width:55%"></div></div></div>
+    </div>
+    <div style="background:var(--color-green-10);border:1px solid rgba(106,158,81,0.2);border-radius:var(--radius-lg);padding:12px 14px;font-size:12px;color:var(--color-green-dark);line-height:1.5;">
+      <strong>✓ Fateless Culture Note:</strong> Igor brings a people-first, highly collaborative style that aligns strongly with Fateless's culture. He stands out in creating alignment across teams, turning different perspectives into clear execution paths — making him especially effective in structured environments where clarity and collaboration drive performance.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><div class="card-icon icon-gold">⭐</div>What Motivates Igor</div>
+    <div class="motivator-grid">
+      <div class="motivator-card"><div class="motivator-icon">🚀</div><div class="motivator-title">Stability &amp; Long-Term Ownership</div><div class="motivator-desc">After working on projects discontinued for external reasons, wants to see a product through launch and live service — Fateless's exact context.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">📈</div><div class="motivator-title">Structured Growth Path</div><div class="motivator-desc">Seeks progressively more ownership under clear leadership. His trajectory (QA → Producer → Art Producer → Live Ops) reflects deliberate growth intent.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">🏗️</div><div class="motivator-title">Building Systems from Scratch</div><div class="motivator-desc">Built Big Moxi's QA department, rollout processes at Obitus — drawn to greenfield ops challenges, not just maintaining existing pipelines.</div></div>
+      <div class="motivator-card"><div class="motivator-icon">🤝</div><div class="motivator-title">Team-First Culture</div><div class="motivator-desc">Key traits from CV: empathetic, teamwork-driven, positive. Values horizontal communication and collaborative decision-making over hierarchy.</div></div>
+    </div>
+    <div style="margin-top:14px;background:var(--color-gold-10);border:1px solid rgba(250,192,0,0.25);border-radius:var(--radius-lg);padding:12px 14px;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#8A6B00;margin-bottom:4px;">🔑 Alignment Signal</div>
+      <div style="font-size:12px;color:var(--color-gray-700);line-height:1.5;">Igor is available immediately, has fluent English, and his most recent role (Overknights live ops on EGS, Dec 2025) is the most directly relevant to Fateless's upcoming live service phase. Timing, availability, and motivation vector all align with Fateless's current moment.</div>
+    </div>
+  </div>
+</div><div class="section-label">💬 Interview Recommendations</div><div class="grid-main" style="margin-bottom:20px;"><div class="card"><div class="card-title"><div class="card-icon icon-blue">🎤</div>Suggested Interview Focus Areas</div><div class="interview-grid">
+  <div class="interview-item blue">
+    <div class="interview-q">Technical: Process-Building Under Constraints</div>
+    <div class="interview-a">At Obitus he rolled out project-wide processes for 20+ people in a short engagement. <strong>"Walk me through what you built — what was broken, what you designed, how you got the team to adopt it."</strong> This is where his instinct for documentation and process clarity should be very visible. Look for specificity, not just summaries.</div>
+  </div>
+  <div class="interview-item blue">
+    <div class="interview-q">Technical: QA Department Build at Big Moxi</div>
+    <div class="interview-a">He set up Big Moxi's QA department from scratch — designed cross-department processes and documentation for a team of 5. <strong>"What were the gaps you identified, how did you design the process, and what would you do differently with hindsight?"</strong> Reveals operational design thinking and self-reflection maturity.</div>
+  </div>
+  <div class="interview-item green">
+    <div class="interview-q">Behavioural: Managing Parallel Disciplines (Reaper Actual)</div>
+    <div class="interview-a"><strong>"At Reaper Actual, you were coordinating Environment, Character, Animation, and Tech Art simultaneously across 30+ artists. How did you structure that — what was your weekly operating rhythm and what dependencies broke down first?"</strong> Reveals how mature his distributed coordination instincts are across art-heavy production.</div>
+  </div>
+  <div class="interview-item navy">
+    <div class="interview-q">Cultural: First 60 Days at Fateless</div>
+    <div class="interview-a"><strong>"You're joining 2 weeks before beta. The Exec Producer asks you to audit the production process and come back with three priorities. What do you look at first and how do you frame it?"</strong> Tests systems thinking, comfort with structured ambiguity, and how he communicates to a founding team under pressure.</div>
+  </div>
+</div></div><div style="display:flex;flex-direction:column;gap:20px;">
+  <div class="salary-card">
+    <div class="card-title" style="color:rgba(255,255,255,0.7);margin-bottom:12px;"><div style="width:28px;height:28px;border-radius:8px;background:rgba(250,192,0,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;">💰</div>Compensation Overview</div>
+    <div class="salary-range">$24,000 – $30,000</div>
+    <div class="salary-unit">USD · Annual · Remote</div>
+    <div class="salary-row"><div class="salary-row-label">Monthly Equivalent</div><div class="salary-row-value">~$2,000 – $2,500/mo</div></div>
+    <div class="salary-row"><div class="salary-row-label">Discussion Style</div><div class="salary-row-value green">Candidate-first</div></div>
+    <div class="salary-row"><div class="salary-row-label">MGB Fee (5% Annual)</div><div class="salary-row-value">$1,200 – $1,500</div></div>
+    <div style="margin-top:14px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;font-size:11px;color:rgba(255,255,255,0.6);line-height:1.5;">Mid-level Brazil market rate for a producer profile at his experience level. Available immediately — no notice period friction.</div>
+  </div>
+</div></div>
+  <div class="recruiter-card">
+    <div class="recruiter-label">🧠 MGB Recruiter Assessment</div>
+    <div class="recruiter-title">Why We're Recommending Igor</div>
+    <div class="recruiter-body">Igor is a producer who has accumulated 4 production roles across different environments in under 3 years — each with increasing scope and responsibility. His CV shows a deliberate growth trajectory: QA foundation at a AAA studio, full production ownership at Big Moxi, art pipeline leadership at scale, and live ops delivery at Obitus. <strong>He is available immediately, fluent in English, and his most recent experience is directly relevant to Fateless's live service phase.</strong></div>
+    <div class="recruiter-points">
+      <div class="recruiter-point"><div class="recruiter-point-icon">🏗️</div><div class="recruiter-point-text"><strong>He builds production infrastructure, not just manages it:</strong> Setting up Big Moxi's QA department from scratch and rolling out project-wide processes at Obitus are proactive operational contributions — not reactive task management. This instinct to structure and document is exactly what Fateless needs at scale.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">🤝</div><div class="recruiter-point-text"><strong>His people-first instincts are a structural advantage in distributed production:</strong> Empathy and conflict resolution are the hardest production skills to teach. Igor's key traits from the CV (empathetic, teamwork-driven, positive communicator) represent the human infrastructure that keeps distributed teams functioning under delivery pressure.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">⚡</div><div class="recruiter-point-text"><strong>Immediate availability with fluent English and a QA-informed production mindset:</strong> His AAA QA background at Build a Rocket Boy (UE5, Visual Studio, performance profiling) gives him a quality lens that most producers at his level don't have — valuable for a studio in the pre-launch stabilization phase.</div></div>
+      <div class="recruiter-point"><div class="recruiter-point-icon">📋</div><div class="recruiter-point-text"><strong>To accelerate his ramp in monetization-adjacent production, a structured 60-day plan with the Exec Producer covering Fateless's economy systems and live service KPI framework will close the remaining gap efficiently:</strong> His process-building instinct and documentation discipline make him well-suited to absorb structured knowledge quickly.</div></div>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <div>
+      <div class="cta-heading">Ready to move forward with Igor?</div>
+      <div class="cta-sub">Available immediately. We'll brief him before any intro call with the Fateless team.</div>
+    </div>
+    <div class="cta-actions">
+      <a href="mgb-talent-hub.html" class="btn-outlined">← Back to Hub</a>
+      <a href="mailto:antonio@mentoriasgamesbrasil.com.br" class="btn-primary">Request Intro Call →</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand"><div class="footer-logo">MGB</div><div class="footer-text">Mentorias Games Brasil · Talent Division · April 2026</div></div>
+    <div class="footer-right">Confidential · For Fateless Games Only · 5% placement fee on annual salary</div>
+  </div>
+</div></body></html>
